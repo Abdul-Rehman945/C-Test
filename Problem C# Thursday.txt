@@ -1,0 +1,90 @@
+	" Class 1	""Rectangle.cs""  "
+
+namespace First_Experiment
+{
+    internal class Rectangle
+    {
+        public int length, width;
+
+        public Rectangle(int length , int width)
+        {
+            this.length = length;
+            this.width = width;
+        }
+
+        public int GetArea()
+        {
+            return length*width;
+        }
+        public int GetPerimeter()
+        {
+            return (2 * (length + width));
+        }
+    }
+}
+
+
+
+	" Class 2             ""Book.cs""   "
+
+namespace First_Experiment
+{
+    internal class Book
+    {
+        public string Title, Author;
+        public int Year;
+
+        public Book(string Title , string Author , int Year)
+        {
+            this.Title = Title;
+            this.Author = Author; 
+            this.Year = Year;
+        }
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"The Author Of ''{Title}'' is ''{Author}''
+	    Which is Published In Year ''{Year}''");
+        }
+    }
+}
+
+
+
+   	"Main Page        ""Programm.cs""    "
+
+
+Console.WriteLine("Problem No 1");
+
+Console.WriteLine("''Insert Length''");
+
+int length = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("''Insert Width''");
+
+int width = Convert.ToInt32(Console.ReadLine());
+Rectangle newobj = new Rectangle(length , width);
+
+int area = newobj.GetArea();
+Console.WriteLine($"Area is {area}");
+
+int perimeter = newobj.GetPerimeter();
+Console.WriteLine($"Perimeter is {perimeter}");
+
+Console.WriteLine("-----------------------------------------");
+Console.WriteLine("Problem No 2");
+
+
+Console.WriteLine("''Title''");
+string title = Console.ReadLine();
+
+Console.WriteLine("''Author''");
+string author = Console.ReadLine();
+
+Console.WriteLine("''Year Published''");
+int year = Convert.ToInt32(Console.ReadLine());
+
+Book obj = new Book(title , author , year);
+
+obj.DisplayInfo();
+
